@@ -11,7 +11,7 @@ srcdir = @srcdir@
 VPATH = @srcdir@
 
 INCLUDES = -I./include -I./include/private @APRUTIL_PRIV_INCLUDES@ @APR_INCLUDES@ @APRUTIL_INCLUDES@
-APRUTIL_LDFLAGS = @APRUTIL_LDFLAGS@
+APRUTIL_LDFLAGS = -L/lib64 -L/libx32 -L/lib -L/usr/lib64 -L/usr/libx32 -L/usr/lib @APRUTIL_LDFLAGS@
 APRUTIL_LIBS = @APRUTIL_LIBS@
 
 TARGET_LIB = lib@APRUTIL_LIBNAME@.la
@@ -57,7 +57,7 @@ DISTCLEAN_TARGETS = config.cache config.log config.status libtool \
 	include/private/apu_config.h include/private/apu_private.h \
 	include/private/apu_select_dbm.h include/apr_ldap.h include/apu.h \
 	export_vars.sh $(APU_CONFIG) build/rules.mk include/apu_want.h \
-	apr-util.pc build/pkg/pkginfo
+	apr-util.pc build/pkg/pkginfo config.nice
 EXTRACLEAN_TARGETS = configure aclocal.m4 include/private/apu_config.h.in \
 	exports.c build-outputs.mk \
 	build/apr_common.m4 build/find_apr.m4 build/install.sh \
