@@ -11990,7 +11990,7 @@ if test "${with_berkeley_db+set}" = set; then :
   all_places="$check_places"
 
   # Start version search at version 5.9
-  db_version=59
+  db_version=53
   while [ $db_version -ge 40 ]
   do
     db_major=`echo $db_version | sed -e 's/.$//'`
@@ -16431,7 +16431,7 @@ fi
   all_places="$check_places"
 
   # Start version search at version 5.9
-  db_version=59
+  db_version=53
   while [ $db_version -ge 40 ]
   do
     db_major=`echo $db_version | sed -e 's/.$//'`
@@ -23421,7 +23421,7 @@ if test "${with_iconv+set}" = set; then :
     test "x$silent" != "xyes" && echo "  setting APRUTIL_LIBS to \"$apu_iconv_dir/lib/libapriconv-1.la\""
     APRUTIL_LIBS="$apu_iconv_dir/lib/libapriconv-1.la"
   else
-    apr_addto_bugger="$apu_iconv_dir/lib/libapriconv-1.la"
+    apr_addto_bugger="-lapriconv-1"
     for i in $apr_addto_bugger; do
       apr_addto_duplicate="0"
       for j in $APRUTIL_LIBS; do
